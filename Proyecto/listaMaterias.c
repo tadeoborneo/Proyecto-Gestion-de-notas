@@ -29,6 +29,7 @@ nodoMateria* crearNodoMateria(stMateria dato)
 {
     nodoMateria* A=(nodoMateria*) malloc(sizeof(nodoMateria));
     A->dato = dato;
+    A->arbolNota = inicArbolNotas();
     A->siguiente = NULL;
 
     return A;
