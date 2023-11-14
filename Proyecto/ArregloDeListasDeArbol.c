@@ -8,16 +8,14 @@ nodoMateria* altaMaterias(nodoMateria* lista,arbolNotas* nuevo,stMateria dato)
 
     if(pos == NULL)
     {
-        nodoMateria* nuevo = crearNodoMateria(dato);
-        lista = agregarPpioMateria(lista,nuevo);
+        nodoMateria* nuevaMateria = crearNodoMateria(dato);
+        lista = agregarPpioMateria(lista,nuevaMateria);
         pos = lista;
     }
-    pos->arbolNota = insertarNotas(pos->arbolNota,nuevo.alumno,nuevo.nota);
+    pos->arbolNota = insertarNotas(pos->arbolNota,nuevo->alumno,nuevo->nota);
 
     return lista;
 }
-
-
 
 nodoMateria* buscarPosMateria(nodoMateria* lista,int idMateria)
 {
@@ -41,7 +39,7 @@ nodoMateria* buscarPosMateria(nodoMateria* lista,int idMateria)
 
 
 
-int ingresarComision (Celda A[],int dimension)
+/*int ingresarComision (Celda A[],int dimension)
 {
 
     int comision;
@@ -57,7 +55,7 @@ int ingresarComision (Celda A[],int dimension)
 
         dato = cargarMateria();
 
-        validos = alta(A,dato,comision,validos);
+        validos = altaArreglo(A,dato,comision,validos);
 
         printf("Si desea continuar presione S: ");
         fflush(stdin);
@@ -65,19 +63,21 @@ int ingresarComision (Celda A[],int dimension)
     }
     return validos;
 }
-
-int altaArreglo (Celda A[],stMateria dato,int comision,int validos)
+*/
+int altaArreglo (Celda A[],stMateria m,int comision,stNota n,stAlumno a,int validos)
 {
-    nodoMateria* aux = crearNodoMateria(dato);
+    nodoMateria* aux = crearNodoMateria(m);
 
-    int pos = buscaPosComision(A,comision,validos);
+    int pos = buscarPosComision(A,comision,validos);
 
     if(pos == -1)
     {
         validos = agregarComision(A,comision,validos);
         pos = validos - 1;
     }
-    A[pos].listaDeNotas = agregarPpio(A[pos].listaDeNotas,aux);
+    arbolNotas* arbolito = crearArbolNotas(n,a);
+    A[pos].listaMateria = altaMaterias(A[pos].listaMateria,arbolito,m);
+
     return validos;
 }
 
@@ -90,7 +90,7 @@ int agregarComision(Celda A[],int comision,int validos)
 }
 
 
-int buscarPosComision (celda A[],int comision,int validos)
+int buscarPosComision (Celda A[],int comision,int validos)
 {
     int rta = -1;
     int i = 0;

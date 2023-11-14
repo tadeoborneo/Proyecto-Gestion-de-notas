@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1699979469 source:c:\users\usuario\desktop\nueva carpeta\proyecto-gestion-de-notas\proyecto\listamaterias.c
+	<stdio.h>
+	<stdlib.h>
+	"listaMaterias.h"
+
+1699979469 c:\users\usuario\desktop\nueva carpeta\proyecto-gestion-de-notas\proyecto\listamaterias.h
+	"arbolNotas.h"
+
+1699979469 c:\users\usuario\desktop\nueva carpeta\proyecto-gestion-de-notas\proyecto\arbolnotas.h
+
+1699984094 source:c:\users\usuario\desktop\nueva carpeta\proyecto-gestion-de-notas\proyecto\arbolnotas.c
+	<stdio.h>
+	<stdlib.h>
+	"arbolNotas.h"
+
+1699984545 source:c:\users\usuario\desktop\nueva carpeta\proyecto-gestion-de-notas\proyecto\arreglodelistasdearbol.c
+	<stdlib.h>
+	<stdio.h>
+	"ArregloDeListasDeArbol.h"
+
+1699984247 c:\users\usuario\desktop\nueva carpeta\proyecto-gestion-de-notas\proyecto\arreglodelistasdearbol.h
+	"listaMaterias.h"
+
+1699984483 source:c:\users\usuario\desktop\nueva carpeta\proyecto-gestion-de-notas\proyecto\main.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"ArregloDeListasDeArbol.h"
+

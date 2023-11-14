@@ -109,7 +109,7 @@ nodoMateria* agregarOrdenadoXidMateria (nodoMateria* lista,nodoMateria* nuevoNod
     {
         if(nuevoNodo->dato.idMateria < lista->dato.idMateria)
         {
-            lista = agregarPpio(lista,nuevoNodo);
+            lista = agregarPpioMateria(lista,nuevoNodo);
         }else
         {
             nodoMateria* anterior = lista;

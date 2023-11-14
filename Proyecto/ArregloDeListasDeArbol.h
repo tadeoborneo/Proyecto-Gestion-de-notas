@@ -7,10 +7,10 @@ typedef struct {
     nodoMateria* listaMateria;
 }Celda;
 
-int ingresarComision (Celda A[],int dimension)
-int altaArreglo (Celda A[],stMateria dato,int comision,int validos);
+int ingresarComision (Celda A[],int dimension);
+int altaArreglo (Celda A[],stMateria m,int comision,stNota n,stAlumno a,int validos);
 int agregarComision(Celda A[],int comision,int validos);
-int buscarPosComision (celda A[],int comision,int validos);
+int buscarPosComision (Celda A[],int comision,int validos);
 nodoMateria* altaMaterias(nodoMateria* lista,arbolNotas* nuevo,stMateria dato);
 nodoMateria* buscarPosMateria(nodoMateria* lista,int idMateria);
 

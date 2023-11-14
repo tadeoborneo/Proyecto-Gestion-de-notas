@@ -80,7 +80,7 @@ arbolNotas* buscarNota(arbolNotas* arbol,stNota nota,int legajo)
     arbolNotas* rta = NULL;
     if(arbol != NULL)
     {
-        if(nota.nroExamen == arbol->nota.numExamen  &&  legajo == arbol->alumno.legajo)
+        if(nota.numExamen == arbol->nota.numExamen  &&  legajo == arbol->alumno.legajo)
             rta = arbol;
         else
         {
