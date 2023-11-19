@@ -33,40 +33,18 @@ nodoMateria* buscarPosMateria(nodoMateria* lista,int idMateria)
 
 
 
-
-
-
-
-
-
-/*int ingresarComision (Celda A[],int dimension)
+void mostrarComisiones (Celda comisiones[],int validos)
 {
-
-    int comision;
-    stMateria dato;
-    char salir = 's';
-    int validos = 0;
-
-    while(salir == 's'  &&  validos < dimension)
+    for(int i=0 ; i<validos ; i++)
     {
-
-        printf("Ingrese la comision: ");
-        scanf("%d",&comision);
-
-        dato = cargarMateria();
-
-        validos = altaArreglo(A,dato,comision,validos);
-
-        printf("Si desea continuar presione S: ");
-        fflush(stdin);
-        scanf("%c",&salir);
+        printf("\nComision %d\n",comisiones[i].comision);
     }
-    return validos;
 }
-*/
+
+
+
 int altaArreglo (Celda A[],stMateria m,int comision,stNota n,stAlumno a,int validos)
 {
-    nodoMateria* aux = crearNodoMateria(m);
 
     int pos = buscarPosComision(A,comision,validos);
 
@@ -104,3 +82,31 @@ int buscarPosComision (Celda A[],int comision,int validos)
 
     return rta;
 }
+
+arbolNotas* buscar (Celda comisiones [],int validos ,int comision,int idMateria)
+{
+    nodoMateria* subLista;
+    arbolNotas* rta = inicArbolNotas();
+    for (int i=0;i<validos;i++)
+    {
+        if(comisiones[i].comision == comision)
+        {
+            subLista = buscarPosMateria(comisiones[i].listaMateria,idMateria);
+            rta = subLista->arbolNota;
+        }
+    }
+
+    return rta;
+}
+
+void mostrarNotaXlegajo (arbolNotas* arbol, int legajo)
+{
+    if(arbol != NULL)
+    {
+        if(arbol->alumno.legajo == legajo)
+            printf("Examen: %d  Nota: %d\n",arbol->nota.numExamen,arbol->nota.nota);
+        mostrarNotaXlegajo(arbol->izq, legajo);
+        mostrarNotaXlegajo(arbol->der, legajo);
+    }
+}
+

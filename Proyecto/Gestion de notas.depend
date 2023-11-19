@@ -28,3 +28,32 @@
 	"string.h"
 	"ArregloDeListasDeArbol.h"
 
+1700338616 source:c:\users\tadeo\onedrive\escritorio\gestion de notas\proyecto-gestion-de-notas\proyecto\arbolnotas.c
+	<stdio.h>
+	<stdlib.h>
+	"arbolNotas.h"
+
+1700338592 c:\users\tadeo\onedrive\escritorio\gestion de notas\proyecto-gestion-de-notas\proyecto\arbolnotas.h
+
+1700346696 source:c:\users\tadeo\onedrive\escritorio\gestion de notas\proyecto-gestion-de-notas\proyecto\arreglodelistasdearbol.c
+	<stdlib.h>
+	<stdio.h>
+	"ArregloDeListasDeArbol.h"
+
+1700338592 c:\users\tadeo\onedrive\escritorio\gestion de notas\proyecto-gestion-de-notas\proyecto\arreglodelistasdearbol.h
+	"listaMaterias.h"
+
+1700173425 c:\users\tadeo\onedrive\escritorio\gestion de notas\proyecto-gestion-de-notas\proyecto\listamaterias.h
+	"arbolNotas.h"
+
+1700173425 source:c:\users\tadeo\onedrive\escritorio\gestion de notas\proyecto-gestion-de-notas\proyecto\listamaterias.c
+	<stdio.h>
+	<stdlib.h>
+	"listaMaterias.h"
+
+1700347351 source:c:\users\tadeo\onedrive\escritorio\gestion de notas\proyecto-gestion-de-notas\proyecto\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArregloDeListasDeArbol.h"
+

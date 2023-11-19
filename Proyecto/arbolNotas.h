@@ -26,7 +26,7 @@ void mostrarAlumno(stAlumno A);
 void mostrarNodoNotas(arbolNotas* A);
 arbolNotas* crearArbolNotas(stNota datoNota, stAlumno datoAlumno);
 arbolNotas* insertarNotas(arbolNotas* arbol, stAlumno datoAlumno,stNota datoNota);
-arbolNotas* buscarNota(arbolNotas* arbol,stNota nota,int legajo);
+arbolNotas* buscarNota(arbolNotas* arbol,int numExamen,int legajo);
 void preorderNotas(arbolNotas* arbol);
 void inorderNotas(arbolNotas* arbol);
 void postorderNotas(arbolNotas* arbol);
@@ -34,6 +34,7 @@ arbolNotas* borrarNota(arbolNotas* arbol,stNota datoNota,int legajo);
 arbolNotas* NMD (arbolNotas* arbol);
 arbolNotas* NMI (arbolNotas* arbol);
 int existeNota(arbolNotas* arbol ,int legajo,stNota datoNota);
+arbolNotas* modificarNota (arbolNotas* arbol,int nroExamen,int legajo,int nuevaNota);
 
 
 #endif // ARBOLNOTAS_H_INCLUDED

@@ -11,16 +11,16 @@ stNota cargarNota()
     stNota A;
 
     printf("Ingrese numero de examen: ");
-    scanf("%d",A.numExamen);
+    scanf("%d",&A.numExamen);
     printf("Ingrese la nota: ");
-    scanf("%d",A.nota);
+    scanf("%d",&A.nota);
 
     return A;
 }
 
 void mostrarNota(stNota A)
 {
-    printf("\nExamen N° %d  Nota: %d\n ",A.numExamen,A.nota);
+    printf("Examen Nro: %d  \nNota: %d\n ",A.numExamen,A.nota);
 }
 
 stAlumno cargarAlumno()
@@ -75,19 +75,18 @@ arbolNotas* insertarNotas(arbolNotas* arbol, stAlumno datoAlumno,stNota datoNota
     return arbol;
 }
 
-arbolNotas* buscarNota(arbolNotas* arbol,stNota nota,int legajo)
+arbolNotas* buscarNota(arbolNotas* arbol,int numExamen,int legajo)
 {
     arbolNotas* rta = NULL;
     if(arbol != NULL)
     {
-        if(nota.numExamen == arbol->nota.numExamen  &&  legajo == arbol->alumno.legajo)
+        if(numExamen == arbol->nota.numExamen  &&  legajo == arbol->alumno.legajo)
             rta = arbol;
         else
         {
-            if(nota.nota > arbol->nota.nota)
-                rta =  buscarNota(arbol->der,nota,legajo);
-            else
-                rta = buscarNota(arbol->izq,nota,legajo);
+            rta =  buscarNota(arbol->der,numExamen,legajo);
+            if(rta == NULL)
+                rta = buscarNota(arbol->izq,numExamen,legajo);
         }
     }
 
@@ -205,4 +204,25 @@ int existeNota(arbolNotas* arbol ,int legajo,stNota datoNota)
         }
     }
     return rta;
+}
+
+arbolNotas* modificarNota (arbolNotas* arbol,int nroExamen,int legajo,int nuevaNota)
+{
+    int flag = 1;
+    if(arbol != NULL)
+    {
+        if(nroExamen == arbol->nota.numExamen  &&  legajo == arbol->alumno.legajo)
+        {
+            arbol->nota.nota = nuevaNota;
+            flag = 0;
+        }
+        else
+        {
+            arbol->der =  modificarNota(arbol->der,nroExamen,legajo,nuevaNota);
+            if(flag == 1)
+                arbol->izq = modificarNota(arbol->izq,nroExamen,legajo,nuevaNota);
+        }
+    }
+
+    return arbol;
 }

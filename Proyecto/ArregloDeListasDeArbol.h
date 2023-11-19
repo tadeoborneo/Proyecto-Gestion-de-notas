@@ -13,5 +13,7 @@ int agregarComision(Celda A[],int comision,int validos);
 int buscarPosComision (Celda A[],int comision,int validos);
 nodoMateria* altaMaterias(nodoMateria* lista,arbolNotas* nuevo,stMateria dato);
 nodoMateria* buscarPosMateria(nodoMateria* lista,int idMateria);
-
+arbolNotas* buscar (Celda comisiones [],int validos ,int comision,int idMateria);
+void mostrarNotaXlegajo (arbolNotas* arbol, int legajo);
+void mostrarComisiones (Celda comisiones[],int validos);
 #endif // ARREGLODELISTASDEARBOL_H_INCLUDED
